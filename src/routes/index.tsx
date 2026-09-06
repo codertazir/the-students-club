@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/logo.png.asset.json";
+import poster from "@/assets/poster.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -84,7 +85,35 @@ const steps = [
   { n: "3", text: "Help us with something you care about, or just come back next week." },
 ];
 
+function smoothScrollTo(hash: string) {
+  const el = document.querySelector(hash) as HTMLElement | null;
+  if (!el) return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const targetY = el.getBoundingClientRect().top + window.scrollY - 24;
+  if (reduce) {
+    window.scrollTo(0, targetY);
+    return;
+  }
+  const startY = window.scrollY;
+  const dist = targetY - startY;
+  const duration = Math.min(1200, Math.max(500, Math.abs(dist) * 0.6));
+  const start = performance.now();
+  const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  const step = (now: number) => {
+    const t = Math.min(1, (now - start) / duration);
+    window.scrollTo(0, startY + dist * ease(t));
+    if (t < 1) requestAnimationFrame(step);
+    else history.replaceState(null, "", hash);
+  };
+  requestAnimationFrame(step);
+}
+
 function Index() {
+  const onCta = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    e.preventDefault();
+    smoothScrollTo(hash);
+  };
+
   return (
     <main className="paper min-h-screen overflow-hidden">
       {/* Hero */}
@@ -100,6 +129,15 @@ function Index() {
             className="drop-in float-slow mx-auto w-full max-w-2xl"
           />
 
+          <Reveal delay={80}>
+            <img
+              src={poster.url}
+              alt="Students sitting around a table sharing ideas in a speech bubble"
+              className="mx-auto mt-8 w-full max-w-md"
+              loading="lazy"
+            />
+          </Reveal>
+
           <Reveal delay={120}>
             <p className="mx-auto mt-10 max-w-xl text-center text-xl sm:text-2xl">
               Organize events, solve everyday problems, and find new ways to make school more fun.
@@ -110,12 +148,14 @@ function Index() {
             <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="#join"
+                onClick={(e) => onCta(e, "#join")}
                 className="ink-border pop-shadow rounded-full bg-primary px-8 py-3 font-display text-lg font-extrabold text-primary-foreground transition-all duration-200 hover:-translate-y-1 hover:shadow-[9px_9px_0_var(--color-ink)] active:translate-y-0"
               >
                 Drop in this Tuesday
               </a>
               <a
                 href="#what-we-do"
+                onClick={(e) => onCta(e, "#what-we-do")}
                 className="ink-border pop-shadow-sky rounded-full bg-card px-8 py-3 font-display text-lg font-extrabold transition-all duration-200 hover:-translate-y-1 hover:shadow-[9px_9px_0_var(--color-sky)] active:translate-y-0"
               >
                 See what we do
@@ -124,6 +164,7 @@ function Index() {
           </Reveal>
         </div>
       </section>
+
 
       {/* Band */}
       <section className="ink-border marquee-band border-x-0 bg-accent py-4">
