@@ -23,16 +23,14 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function Star({ top, bottom, children, className = "" }: { top?: string; bottom?: string; children: React.ReactNode; className?: string }) {
+function Star({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      className={`star-badge grid size-32 place-items-center bg-primary text-center leading-none text-background sm:size-40 ${className}`}
-      style={{ top, bottom }}
-    >
+    <div className="star-badge grid size-32 place-items-center bg-primary text-center leading-none text-background sm:size-40">
       {children}
     </div>
   );
 }
+
 
 const doings = [
   {
