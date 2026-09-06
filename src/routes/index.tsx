@@ -117,46 +117,42 @@ function Index() {
   return (
     <main className="paper min-h-screen overflow-hidden">
       {/* Hero */}
-      <section className="relative mx-auto max-w-6xl px-5 pt-10 pb-16 sm:pt-16">
-        <div
-          className="stripe-circle float-slow pointer-events-none absolute -left-24 -top-24 size-72 opacity-60"
-          aria-hidden
-        />
-        <div className="relative">
+      <section className="relative flex min-h-[100dvh] flex-col items-center justify-center px-5 py-6 sm:py-10">
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center justify-center">
           <img
             src={logo.url}
             alt="The Students Club logo"
-            className="drop-in float-slow mx-auto w-full max-w-2xl"
+            className="drop-in float-slow mx-auto w-full max-w-2xl max-h-[34vh] object-contain"
           />
 
           <Reveal delay={80}>
             <img
               src={poster.url}
               alt="Students sitting around a table sharing ideas in a speech bubble"
-              className="mx-auto mt-8 w-full max-w-md"
+              className="mx-auto mt-4 w-full max-w-xl max-h-[32vh] object-contain sm:mt-6"
               loading="lazy"
             />
           </Reveal>
 
           <Reveal delay={120}>
-            <p className="mx-auto mt-10 max-w-xl text-center text-xl sm:text-2xl">
+            <p className="mx-auto mt-4 max-w-xl text-center text-xl sm:mt-6 sm:text-2xl">
               Organize events, solve everyday problems, and find new ways to make school more fun.
             </p>
           </Reveal>
 
           <Reveal delay={220}>
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:mt-8">
               <a
                 href="#join"
                 onClick={(e) => onCta(e, "#join")}
-                className="ink-border pop-shadow rounded-full bg-primary px-8 py-3 font-display text-lg font-extrabold text-primary-foreground transition-all duration-200 hover:-translate-y-1 hover:shadow-[9px_9px_0_var(--color-ink)] active:translate-y-0"
+                className="ink-border pop-shadow rounded-full bg-primary px-6 py-2.5 font-display text-base font-extrabold text-primary-foreground transition-all duration-200 hover:-translate-y-1 hover:shadow-[9px_9px_0_var(--color-ink)] active:translate-y-0 sm:px-8 sm:py-3 sm:text-lg"
               >
                 Drop in this Tuesday
               </a>
               <a
                 href="#what-we-do"
                 onClick={(e) => onCta(e, "#what-we-do")}
-                className="ink-border pop-shadow-sky rounded-full bg-card px-8 py-3 font-display text-lg font-extrabold transition-all duration-200 hover:-translate-y-1 hover:shadow-[9px_9px_0_var(--color-sky)] active:translate-y-0"
+                className="ink-border pop-shadow-sky rounded-full bg-card px-6 py-2.5 font-display text-base font-extrabold transition-all duration-200 hover:-translate-y-1 hover:shadow-[9px_9px_0_var(--color-sky)] active:translate-y-0 sm:px-8 sm:py-3 sm:text-lg"
               >
                 See what we do
               </a>
@@ -188,6 +184,21 @@ function Index() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Why The Students Club */}
+      <section id="why-us" className="mx-auto max-w-4xl px-5 pb-16">
+        <Reveal>
+          <article className="ink-border pop-shadow h-full rounded-3xl bg-card p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[10px_10px_0_var(--color-ink)] sm:p-10">
+            <h2 className="text-2xl sm:text-3xl">Why The Students Club?</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              We function as an open idea pipeline. Any student can submit an event idea or a school problem through the suggestion form or at our drop-in meetings, and we work to turn the good ones into real events or fixes all year long.
+            </p>
+            <p className="mt-4 text-lg text-muted-foreground">
+              This is different from other clubs in a specific way: Student Council has a limited number of elected seats and plans very few events; NHS has membership requirements; and Compassion Club is focused specifically on service work. The Students Club is meant to be the one place where any student — regardless of whether they were elected or meet criteria — can pitch an idea and help make it happen.
+            </p>
+          </article>
+        </Reveal>
       </section>
 
       {/* Students Hub */}
