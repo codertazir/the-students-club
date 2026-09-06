@@ -117,12 +117,8 @@ function Index() {
   return (
     <main className="paper min-h-screen overflow-hidden">
       {/* Hero */}
-      <section className="relative mx-auto max-w-6xl px-5 pt-10 pb-16 sm:pt-16">
-        <div
-          className="stripe-circle float-slow pointer-events-none absolute -left-24 -top-24 size-72 opacity-60"
-          aria-hidden
-        />
-        <div className="relative">
+      <section className="relative flex min-h-[100dvh] flex-col items-center justify-center px-5 py-10">
+        <div className="relative mx-auto w-full max-w-6xl">
           <img
             src={logo.url}
             alt="The Students Club logo"
@@ -133,7 +129,7 @@ function Index() {
             <img
               src={poster.url}
               alt="Students sitting around a table sharing ideas in a speech bubble"
-              className="mx-auto mt-8 w-full max-w-md"
+              className="mx-auto mt-8 w-full max-w-xl"
               loading="lazy"
             />
           </Reveal>
@@ -188,6 +184,21 @@ function Index() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Why The Students Club */}
+      <section id="why-us" className="mx-auto max-w-4xl px-5 pb-16">
+        <Reveal>
+          <article className="ink-border pop-shadow h-full rounded-3xl bg-card p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[10px_10px_0_var(--color-ink)] sm:p-10">
+            <h2 className="text-2xl sm:text-3xl">Why The Students Club?</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              We function as an open idea pipeline. Any student can submit an event idea or a school problem through the suggestion form or at our drop-in meetings, and we work to turn the good ones into real events or fixes all year long.
+            </p>
+            <p className="mt-4 text-lg text-muted-foreground">
+              This is different from other clubs in a specific way: Student Council has a limited number of elected seats and plans very few events; NHS has membership requirements; and Compassion Club is focused specifically on service work. The Students Club is meant to be the one place where any student — regardless of whether they were elected or meet criteria — can pitch an idea and help make it happen.
+            </p>
+          </article>
+        </Reveal>
       </section>
 
       {/* Students Hub */}
