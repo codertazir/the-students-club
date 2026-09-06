@@ -117,12 +117,12 @@ function Index() {
   return (
     <main className="paper min-h-screen overflow-hidden">
       {/* Hero */}
-      <section className="relative flex min-h-[100dvh] flex-col items-center justify-center px-5 py-10">
-        <div className="relative mx-auto w-full max-w-6xl">
+      <section className="relative flex min-h-[100dvh] flex-col items-center justify-center px-5 py-6 sm:py-10">
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center justify-center">
           <img
             src={logo.url}
             alt="The Students Club logo"
-            className="drop-in float-slow mx-auto w-full max-w-2xl"
+            className="drop-in float-slow mx-auto w-full max-w-2xl max-h-[34vh] object-contain"
           />
 
           <Reveal delay={80}>
