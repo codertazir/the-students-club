@@ -129,30 +129,30 @@ function Index() {
             <img
               src={poster.url}
               alt="Students sitting around a table sharing ideas in a speech bubble"
-              className="mx-auto mt-8 w-full max-w-xl"
+              className="mx-auto mt-4 w-full max-w-xl max-h-[32vh] object-contain sm:mt-6"
               loading="lazy"
             />
           </Reveal>
 
           <Reveal delay={120}>
-            <p className="mx-auto mt-10 max-w-xl text-center text-xl sm:text-2xl">
+            <p className="mx-auto mt-4 max-w-xl text-center text-xl sm:mt-6 sm:text-2xl">
               Organize events, solve everyday problems, and find new ways to make school more fun.
             </p>
           </Reveal>
 
           <Reveal delay={220}>
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:mt-8">
               <a
                 href="#join"
                 onClick={(e) => onCta(e, "#join")}
-                className="ink-border pop-shadow rounded-full bg-primary px-8 py-3 font-display text-lg font-extrabold text-primary-foreground transition-all duration-200 hover:-translate-y-1 hover:shadow-[9px_9px_0_var(--color-ink)] active:translate-y-0"
+                className="ink-border pop-shadow rounded-full bg-primary px-6 py-2.5 font-display text-base font-extrabold text-primary-foreground transition-all duration-200 hover:-translate-y-1 hover:shadow-[9px_9px_0_var(--color-ink)] active:translate-y-0 sm:px-8 sm:py-3 sm:text-lg"
               >
                 Drop in this Tuesday
               </a>
               <a
                 href="#what-we-do"
                 onClick={(e) => onCta(e, "#what-we-do")}
-                className="ink-border pop-shadow-sky rounded-full bg-card px-8 py-3 font-display text-lg font-extrabold transition-all duration-200 hover:-translate-y-1 hover:shadow-[9px_9px_0_var(--color-sky)] active:translate-y-0"
+                className="ink-border pop-shadow-sky rounded-full bg-card px-6 py-2.5 font-display text-base font-extrabold transition-all duration-200 hover:-translate-y-1 hover:shadow-[9px_9px_0_var(--color-sky)] active:translate-y-0 sm:px-8 sm:py-3 sm:text-lg"
               >
                 See what we do
               </a>
