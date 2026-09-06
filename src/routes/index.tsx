@@ -70,7 +70,7 @@ const doings = [
   },
   {
     title: "Solve everyday problems",
-    body: "No healthy food, long lunch queues, nowhere to sit. Bring the annoying stuff and we find solutions - we don't depend on other people.",
+    body: "No healthy food, long lunch lines, nowhere to relax. Bring the annoying stuff and we find solutions - no depending on others.",
   },
   {
     title: "Make school more fun",
