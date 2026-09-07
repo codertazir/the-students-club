@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import logo from "@/assets/logo.png.asset.json";
-import poster from "@/assets/poster.png.asset.json";
+import logo from "@/assets/logo.png";
+import poster from "@/assets/poster.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -120,14 +120,14 @@ function Index() {
       <section className="relative flex min-h-[100dvh] flex-col items-center justify-center px-5 py-6 sm:py-10">
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center justify-center">
           <img
-            src={logo.url}
+            src={logo}
             alt="The Students Club logo"
             className="drop-in float-slow mx-auto w-full max-w-2xl max-h-[34vh] object-contain"
           />
 
           <Reveal delay={80}>
             <img
-              src={poster.url}
+              src={poster}
               alt="Students sitting around a table sharing ideas in a speech bubble"
               className="mx-auto mt-4 w-full max-w-xl max-h-[32vh] object-contain sm:mt-6"
               loading="lazy"
